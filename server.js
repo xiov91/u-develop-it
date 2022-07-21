@@ -12,7 +12,7 @@ app.use(express.json());
 const db = mysql.createConnection(
     {
         host: 'localhost',
-        // Your MySql usernanme,
+        // Your MySql username,
         user: 'root',
         //Your MySql password
         password: 'ebonHawk3!',
@@ -123,7 +123,7 @@ app.put('/api/candidate/:id', (req, res) => {
         res.status(400).json({ error: errors });
         return;
     }
-    
+
     const sql = `UPDATE candidates SET party_id = ?
                 WHERE id = ?`;
     const params = [req.body.party_id, req.params.id];
